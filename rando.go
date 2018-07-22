@@ -37,6 +37,11 @@
 //			fmt.Printf("%x %d\n", srng.Uint64(), srng.Intn(1000))
 //		}
 //
+// Generator uses permutation from cryptographic function, and it avoids presumable
+// pitfal of that permutation, so it is expected to pass any statictical tests.
+// It seems that the expectations are justified: dieharder, practrand and BigCrush
+// were completed without any fail.
+//
 // Despite being practically secure, Rando is almost as fast as math/rand:
 //
 // - it is much smaller to allocate and initialize, because default math/rand

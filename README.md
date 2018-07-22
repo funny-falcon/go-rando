@@ -44,6 +44,13 @@ func main() {
 }
 ```
 
+# Quality
+
+Generator uses permutation from cryptographic function, and it avoids presumable
+pitfal of that permutation, so it is expected to pass any statictical tests.
+It seems that the expectations are justified: dieharder, practrand and BigCrush
+were completed without any fail. (results are in test.out folder)
+
 # Performance
 
 Despite being practically secure, Rando is almost as fast as math/rand:
