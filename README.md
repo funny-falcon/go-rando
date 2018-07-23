@@ -66,3 +66,9 @@ and benchsrc.out
   into math/rand.Rand, and math.Int32n method were called.
 - benchsrc.out - is benchmark of different math/rand.Source64 implementations
   without wrapping into math/rand.Rand.
+
+Also it was tested against libsodium chacha20 (benchmark folder). Go's rando implementation
+is just 2.1x slower than ChaCha20. Implemented in C, rando is just 1.25x slower.
+If number of iterations in permutation is decreased to 4, C rando is as fast as
+ChaCha20.
+(But, to be honestly, ChaCha8 is not yet broken, and it will be twice faster.)
