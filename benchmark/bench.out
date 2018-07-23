@@ -1,0 +1,28 @@
++ go build head.go
++ go build rando.go
++ gcc -O3 chacha20.c -lsodium -o chacha20
++ gcc -O3 rando.c -lsodium -o rando_c
++ N=1073741824
++ ./head 1073741824 /dev/urandom
+
+real	0m7,192s
+user	0m0,000s
+sys	0m7,197s
++ ./chacha20
++ ./head 1073741824
+
+real	0m1,378s
+user	0m0,810s
+sys	0m0,616s
++ ./rando
++ ./head 1073741824
+
+real	0m2,884s
+user	0m2,346s
+sys	0m0,591s
++ ./rando_c
++ ./head 1073741824
+
+real	0m1,533s
+user	0m1,038s
+sys	0m0,540s
