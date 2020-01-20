@@ -11,6 +11,7 @@ To produce each 128bit of output generator:
   - 64bit salt randomly taken from global entropy pool of 128 elements.
 - performs 5 rounds of SipHash permutaion
 - takes two elements and xor it with per-generator mask
+
 Generator is initialized in following way:
 - id is get by permuting incremented global value.
   Incrementing global value and using invertable permutation, it quaranteed,
